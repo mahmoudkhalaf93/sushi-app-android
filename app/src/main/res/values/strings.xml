@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zalpia</string>
+    <string name="app_name">Sushi</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -11,4 +11,14 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="sign_in">Sign In !</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="create_account">Don\'t have an account, Register?</string>
+    <string name="todo">TODO</string>
+    <string name="or">OR</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
 </resources>
