@@ -6,13 +6,14 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+
     defaultConfig {
         applicationId "com.example.zalpia"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
@@ -37,6 +38,12 @@ dependencies {
     // (see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version)
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
 
+implementation 'androidx.room:room-runtime:2.2.6'
+    annotationProcessor "androidx.room:room-compiler:2.2.6"
+    implementation "androidx.room:room-rxjava2:2.2.6"
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -50,4 +57,5 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.android.support:multidex:1.0.3'
 }

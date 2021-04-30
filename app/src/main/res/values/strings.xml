@@ -16,9 +16,18 @@
     <string name="password">Password</string>
     <string name="forget_password">Forget Password?</string>
     <string name="sign_in_button">Sign In</string>
-    <string name="create_account">Don\'t have an account, Register?</string>
+    <string name="create_account">Don\'t have an account, \t</string>
     <string name="todo">TODO</string>
     <string name="or">OR</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
+
+    <string name="sign_in_now">Sign in Now</string>
+    <string name="register">Register</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="registeri">Register !</string>
+    <string name="e_mail">E-mail</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="register_now">Register Now</string>
+    <string name="register_q">Register?</string>
+    <string name="already_have_an_account">Already have an account, \t </string>
+    <string name="sign_inq">Sign in?</string>
 </resources>

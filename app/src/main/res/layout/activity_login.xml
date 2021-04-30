@@ -17,7 +17,7 @@
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
 
-            android:layout_height="@dimen/_250sdp"
+            android:layout_height="@dimen/_200sdp"
             android:contentDescription="@string/todo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,9 +44,9 @@
         <EditText
             android:id="@+id/username_login"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginLeft="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginRight="@dimen/_40sdp"
             android:autofillHints=""
             android:drawableLeft="@drawable/user"
@@ -60,12 +60,12 @@
         <EditText
             android:id="@+id/password_login"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginLeft="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginRight="@dimen/_40sdp"
             android:drawableLeft="@drawable/password"
-            android:drawablePadding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_13sdp"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:paddingLeft="@dimen/_8sdp"
@@ -88,6 +88,7 @@
             android:id="@+id/signin_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="LoginNow"
             android:layout_marginLeft="@dimen/_50sdp"
             android:layout_marginTop="@dimen/_40sdp"
             android:layout_marginRight="@dimen/_50sdp"
@@ -152,15 +153,31 @@
             app:layout_constraintEnd_toEndOf="@+id/signin_button"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
             android:contentDescription="@string/todo" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:text="@string/create_account"
-            android:textColor="@color/black"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView3" />
+            app:layout_constraintStart_toStartOf="@+id/imageView3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/create_account"
+                android:textColor="@color/black"
+                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:text="@string/register_q"
+                android:onClick="GoToRegister"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

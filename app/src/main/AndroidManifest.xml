@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Zalpia">
+        android:theme="@style/Theme.Zalpia.NoActionBar">
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".LoginActivity" />
         <activity
