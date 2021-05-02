@@ -1,16 +1,16 @@
-package com.example.zalpia.ui.gallery;
+package com.example.zalpia.ui.order;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class OrderViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public OrderViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is order fragment");
     }
 
     public LiveData<String> getText() {

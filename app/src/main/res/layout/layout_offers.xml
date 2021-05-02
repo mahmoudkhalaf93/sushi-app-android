@@ -1,110 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/_130sdp"
-    android:layout_margin="@dimen/_8sdp"
-    app:cardElevation = "10dp"
-    app:cardCornerRadius = "20dp"
-    android:layout_height="@dimen/_160sdp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+    <data>
 
-        <ImageView
+    </data>
 
-            android:id="@+id/offer_image"
-            android:layout_width="match_parent"
-            android:scaleType="centerCrop"
-            android:layout_height="match_parent"
-            android:foreground="@drawable/cardview_gradient"
-            android:src="@drawable/pizza" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_130sdp"
+        android:layout_margin="@dimen/_8sdp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_height="@dimen/_160sdp">
 
-        <TextView
-            android:id="@+id/offer_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginBottom="@dimen/_14sdp"
-            android:fontFamily="@font/calibrib"
-            android:maxLength="17"
-            android:maxLines="1"
-            android:paddingLeft="@dimen/_8sdp"
-            android:paddingRight="@dimen/_8sdp"
-            android:text="50%dsadasdasdasdd"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/line2_offer_name"
-            app:layout_constraintStart_toStartOf="parent" />
-        <TextView
-            android:id="@+id/line2_offer_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:fontFamily="@font/calibrib"
-            android:maxLength="17"
-            android:maxLines="1"
-            android:paddingLeft="@dimen/_8sdp"
-            android:paddingRight="@dimen/_8sdp"
-            android:text="disconut on prtofs"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-            app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="@dimen/_16sdp"
-            android:layout_marginLeft="@dimen/_16sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/offer_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-<View
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/_1sdp"
-    android:background="@color/white"
-    />
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_margin="@dimen/_2sdp"
-    android:layout_height="wrap_content">
+            <ImageView
 
-    <ImageView
-        android:id="@+id/offer_time_calendar_image"
-        android:layout_width="@dimen/_12sdp"
-        android:layout_height="@dimen/_12sdp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_baseline_access_time_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/offer_image"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent"
+                android:foreground="@drawable/cardview_gradient"
+                android:src="@drawable/pizza" />
 
-    <TextView
-        android:id="@+id/offer_time_calendar_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/calibri"
-        android:maxLength="28"
-        android:maxLines="1"
-        android:paddingLeft="@dimen/_2sdp"
-        android:paddingRight="@dimen/_8sdp"
-        android:text="15:00 to 20:30"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_8sdp"
+            <TextView
+                android:id="@+id/offer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="@dimen/_14sdp"
+                android:fontFamily="@font/calibrib"
+                android:maxLength="17"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:text="50%dsadasdasdasdd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/line2_offer_name"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/offer_time_calendar_image"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/line2_offer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/calibrib"
+                android:maxLength="17"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:text="disconut on prtofs"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/offer_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/white" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/offer_time_calendar_image"
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_baseline_access_time_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/offer_time_calendar_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/calibri"
+                        android:maxLength="28"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_2sdp"
+                        android:paddingRight="@dimen/_8sdp"
+                        android:text="15:00 to 20:30"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8sdp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/offer_time_calendar_image"
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</layout>

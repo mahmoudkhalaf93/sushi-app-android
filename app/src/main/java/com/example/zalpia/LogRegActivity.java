@@ -17,9 +17,11 @@ public class LogRegActivity extends AppCompatActivity {
 
     public void SignIn(View view) {
         startActivity(new Intent(this,LoginActivity.class));
+        finish();
     }
 
     public void Register(View view) {
         startActivity(new Intent(this,RegisterActivity.class));
+        finish();
     }
 }

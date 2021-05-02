@@ -41,5 +41,6 @@ ActivityRegisterBinding binding;
 
     public void GoToLogin(View view) {
         startActivity(new Intent(this,LoginActivity.class));
+        overridePendingTransition(R.anim.reg_anim_fromhideleft_to_show, R.anim.reg_anim_fromshow_to_hidetorightside);
     }
 }

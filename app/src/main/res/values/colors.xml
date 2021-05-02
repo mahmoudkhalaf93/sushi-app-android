@@ -10,8 +10,13 @@
     <color name="hidden">#00000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_orange">#ffa544</color>
+    <color name="light_orange_gradient_hard">#BCFFA544</color>
+    <color name="light_orange_gradient_center">#97FFA544</color>
+    <color name="light_orange_gradient_light">#54FFA544</color>
     <color name="strong_orange">#e18200</color>
     <color name="very_light_orange">#FFDCA2</color>
     <color name="very2_light_orange">#FFEED0</color>
-
+    <color name="gray_text_in_profilepic">#aeaead</color>
+    <color name="gray_background_profilepic">#F7F7F7</color>
+    <color name="gray_background_profilepic_strong">#ebebeb</color>
 </resources>

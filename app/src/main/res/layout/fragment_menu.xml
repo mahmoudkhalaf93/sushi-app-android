@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_background_profilepic_strong"
+        tools:context=".ui.menu.MenuFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_minus30sdp">
+
+            <TextView
+                android:id="@+id/cat_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:elevation="22dp"
+                android:fontFamily="@font/calibrib"
+                android:gravity="center"
+                android:text="Category 1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_22sdp"
+                app:layout_constraintBottom_toTopOf="@+id/SliderDots"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/swipview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/SliderDots"
+                android:orientation="horizontal" />
+            <LinearLayout
+                android:id="@+id/SliderDots"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_9sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:elevation="22dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!--                <ImageView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:src="@drawable/active_dot" />-->
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView20"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_225sdp"
+                android:elevation="1dp"
+                app:cardCornerRadius="@dimen/_30sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_220sdp"
+                    app:cardCornerRadius="@dimen/_30sdp"
+                    android:elevation="51dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+
+                        android:elevation="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/cat_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/black"
+                            android:foreground="@drawable/grad5"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/cat3" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cat_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView20"
+                tools:listitem="@layout/layout_item" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

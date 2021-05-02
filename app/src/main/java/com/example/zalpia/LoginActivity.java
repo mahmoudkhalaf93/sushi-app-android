@@ -22,6 +22,7 @@ ActivityLoginBinding binding;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_login);
+
         binding= DataBindingUtil.setContentView(this,R.layout.activity_login);
 
 
@@ -52,5 +53,6 @@ ActivityLoginBinding binding;
 
     public void GoToRegister(View view) {
         startActivity(new Intent(this,RegisterActivity.class));
+        overridePendingTransition(R.anim.login_anim_fromhideright_to_show, R.anim.login_anim_fromshowing_to_hidetoleftside);
     }
 }

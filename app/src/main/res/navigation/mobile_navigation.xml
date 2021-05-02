@@ -12,14 +12,30 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.zalpia.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_order"
+        android:name="com.example.zalpia.ui.order.OrderFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_order" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.zalpia.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_menu"
+        android:name="com.example.zalpia.ui.menu.MenuFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/nav_restaurant"
+        android:name="com.example.zalpia.ui.restaurant.RestaurantFragment"
+        android:label="RestaurantFragment" />
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="com.example.zalpia.ui.favorites.FavoritesFragment"
+        android:label="FavoritesFragment" />
+    <fragment
+        android:id="@+id/nav_mycart"
+        android:name="com.example.zalpia.ui.mycart.MyCartFragment"
+        android:label="MyCartFragment" />
+    <fragment
+        android:id="@+id/nav_myaccount"
+        android:name="com.example.zalpia.ui.myaccount.MyAccountFragment"
+        android:label="MyAccountFragment" />
 </navigation>

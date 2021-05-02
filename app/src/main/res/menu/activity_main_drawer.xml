@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
-
-    <group android:checkableBehavior="single">
+    tools:showIn="navigation_view"
+    
+    >
+    <group  android:id="@+id/group" >
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_order"
+            android:icon="@drawable/ic_twotone_shopping_cart_24"
+            android:title="Order" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_sushi_plat"
+            android:title="Menu" />
+        <item
+            android:id="@+id/nav_restaurant"
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="Restaurant" />
+        <item
+
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/ic_baseline_favorite_border_24"
+            android:title="Favorites" />
+        <item
+            android:id="@+id/nav_mycart"
+            android:icon="@drawable/ic_round_shopping_basket_24"
+            android:title="My Cart" />
+        <item
+            android:checked="true"
+            android:id="@+id/nav_myaccount"
+            android:icon="@drawable/ic_user_person"
+            android:title="My Account" />
+</group>
+
+    <group  android:id="@+id/group1" >
+
+        <item
+            android:id="@+id/nav_aboutus"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_contactus"
+            android:icon="@drawable/ic_outline_email_24"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/nav_terms"
+            android:icon="@drawable/terms"
+            android:title="Terms and Conditions" />
     </group>
 </menu>
