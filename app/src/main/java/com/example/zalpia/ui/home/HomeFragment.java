@@ -16,15 +16,17 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.zalpia.R;
 import com.example.zalpia.databinding.FragmentHomeBinding;
 
+import java.util.ArrayList;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    private OffersAdapter offersAdapter;
 FragmentHomeBinding binding;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home, container, false);
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         //View root = inflater.inflate(R.layout.fragment_home, container, false);
        // final TextView textView = root.findViewById(R.id.text_home);
@@ -35,7 +37,13 @@ FragmentHomeBinding binding;
                 binding.textHome.setText(s);
             }
         });
-
+homeViewModel.getOfferList().observe(getViewLifecycleOwner(), new Observer<ArrayList<OfferModel>>() {
+    @Override
+    public void onChanged(ArrayList<OfferModel> offerModels) {
+        offersAdapter = new OffersAdapter(getActivity(),offerModels);
+        binding.rvHomepageOffers.setAdapter(offersAdapter);
+    }
+});
 
         return binding.getRoot();
     }

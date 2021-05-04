@@ -1,23 +1,40 @@
 package com.example.zalpia.ui.home;
 
 public class OfferModel {
-    String time, offer;
-    int offerimage, timeImage;
+    String timeText, offerNameLine1,offerNameLine2;
+    int offerimage;
+    Boolean isImageCalendar;
 
-    public String getTime() {
-        return time;
+    public OfferModel(String timeText, String offerNameLine1, String offerNameLine2, int offerimage, Boolean isImageCalendar) {
+        this.timeText = timeText;
+        this.offerNameLine1 = offerNameLine1;
+        this.offerNameLine2 = offerNameLine2;
+        this.offerimage = offerimage;
+        this.isImageCalendar = isImageCalendar;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public String getOfferNameLine2() {
+        return offerNameLine2;
     }
 
-    public String getOffer() {
-        return offer;
+    public void setOfferNameLine2(String offerNameLine2) {
+        this.offerNameLine2 = offerNameLine2;
     }
 
-    public void setOffer(String offer) {
-        this.offer = offer;
+    public String getTimeText() {
+        return timeText;
+    }
+
+    public void setTimeText(String timeText) {
+        this.timeText = timeText;
+    }
+
+    public String getOfferNameLine1() {
+        return offerNameLine1;
+    }
+
+    public void setOfferNameLine1(String offerNameLine1) {
+        this.offerNameLine1 = offerNameLine1;
     }
 
     public int getOfferimage() {
@@ -28,11 +45,11 @@ public class OfferModel {
         this.offerimage = offerimage;
     }
 
-    public int getTimeImage() {
-        return timeImage;
+    public Boolean getIsImageCalendar() {
+        return isImageCalendar;
     }
 
-    public void setTimeImage(int timeImage) {
-        this.timeImage = timeImage;
+    public void setIsImageCalendar(Boolean isImageCalendar) {
+        this.isImageCalendar = isImageCalendar;
     }
 }

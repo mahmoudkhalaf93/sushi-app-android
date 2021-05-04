@@ -14,9 +14,12 @@ import android.view.ViewGroup;
 import com.example.zalpia.R;
 import com.example.zalpia.databinding.FragmentMyCartBinding;
 
+import java.util.ArrayList;
+
 
 public class MyCartFragment extends Fragment {
 FragmentMyCartBinding binding;
+ArrayList<ItemModel> itemModels =new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,5 +33,11 @@ FragmentMyCartBinding binding;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        itemModels.add(new ItemModel("sushi","it's very good sushi" , "50.6EGP",R.drawable.sushi_icon_png));
+        itemModels.add(new ItemModel("mango","it's very nice mang" , "20.86EGP",R.drawable.mango));
+        itemModels.add(new ItemModel("pepsi","it's good pepsi" , "10.6EGP",R.drawable.pepsi));
+MyCartAdapter myCartAdapter=new MyCartAdapter(itemModels);
+binding.mycartRvOrdersCat.setAdapter(myCartAdapter);
+
     }
 }

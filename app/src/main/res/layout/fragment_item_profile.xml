@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.itemprofile.ItemProfileFragment">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:elevation="2dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="match_parent"
+            android:background="@color/light_orange"
+            android:elevation="0dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/_16sdp"
+            android:paddingLeft="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:textColor="@color/light_orange"
+            android:text="i love this product so very much mo r e sd than any another product "
+            app:layout_constraintBottom_toTopOf="@+id/cardView_addmore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/cardView6" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_addmore"
+            android:layout_width="0dp"
+            android:layout_marginLeft="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_35sdp"
+            app:cardCornerRadius="@dimen/_50sdp"
+            app:cardElevation="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_24sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+<TextView
+    android:id="@+id/item_profile_addtocart"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:layout_height="@dimen/_35sdp"
+    android:text="Add To Cart"
+    android:gravity="center"
+    android:textColor="@color/light_orange"
+    android:textSize="@dimen/_15sdp"
+    android:fontFamily="@font/calibrib"
+
+    />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewitem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:cardCornerRadius="@dimen/_50sdp"
+            app:cardElevation="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/item_profile_name"
+                android:layout_width="@dimen/_260sdp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/calibrib"
+                android:paddingLeft="@dimen/_8sdp"
+                android:textColor="@color/light_orange"
+                android:textSize="@dimen/_25sdp"
+                tools:text=" Item 1" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_50sdp"
+            app:cardElevation="0dp"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewitem"
+
+            >
+
+            <TextView
+                android:id="@+id/item_profile_price"
+                android:layout_width="@dimen/_260sdp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_orange"
+                android:fontFamily="@font/calibri"
+                android:gravity="right"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_16sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25sdp"
+                tools:text="49.99 EGP" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView6"
+            android:layout_width="@dimen/_210sdp"
+            android:layout_height="@dimen/_260sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewprice">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/catdef" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/item_profile_favorite_Sign"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/_minus48sdp"
+                android:layout_marginRight="@dimen/_minus48sdp"
+                app:cardCornerRadius="@dimen/_180sdp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_orange" />
+
+                <ImageView
+android:id="@+id/item_profile_heart_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:elevation="@dimen/_10sdp"
+                    android:src="@drawable/ic_baseline_favorite_border_24_white" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

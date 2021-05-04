@@ -2,7 +2,6 @@ package com.example.zalpia.ui.home;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -28,15 +27,23 @@ ArrayList<OfferModel> offerModelArrayList;
     public OffersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutOffersBinding offersBinding= DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_offers,
                 parent,false);
-
-
         return new OffersViewHolder(offersBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull OffersViewHolder holder, int position) {
         OfferModel offerModel=offerModelArrayList.get(position);
-        //holder.binding.offerImage.se
+
+        holder.binding.offerImage.setImageResource(offerModel.getOfferimage());
+        holder.binding.offerNameLine1.setText(offerModel.getOfferNameLine1());
+        holder.binding.offerNameLine2.setText(offerModel.getOfferNameLine2());
+        if(offerModel.getIsImageCalendar()){
+            holder.binding.offerTimeCalendarImage.setImageResource(R.drawable.ic_baseline_calendar_today_24);
+        }
+        else{
+            holder.binding.offerTimeCalendarImage.setImageResource(R.drawable.ic_baseline_access_time_24);
+        }
+        holder.binding.offerTimeCalendarText.setText(offerModel.getTimeText());
 
     }
 

@@ -9,13 +9,17 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="@dimen/_130sdp"
-        android:layout_margin="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
         app:cardElevation="10dp"
         app:cardCornerRadius="20dp"
         android:layout_height="@dimen/_160sdp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
+
             android:layout_height="match_parent">
 
             <ImageView
@@ -24,11 +28,11 @@
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
                 android:layout_height="match_parent"
-                android:foreground="@drawable/cardview_gradient"
-                android:src="@drawable/pizza" />
+                android:foreground="@drawable/cardview_gradient_light"
+                android:src="@drawable/pizzad" />
 
             <TextView
-                android:id="@+id/offer_name"
+                android:id="@+id/offer_name_line1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
@@ -41,11 +45,11 @@
                 android:text="50%dsadasdasdasdd"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
-                app:layout_constraintBottom_toBottomOf="@+id/line2_offer_name"
+                app:layout_constraintBottom_toBottomOf="@+id/offer_name_line2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/line2_offer_name"
+                android:id="@+id/offer_name_line2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"

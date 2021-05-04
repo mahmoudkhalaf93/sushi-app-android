@@ -21,7 +21,4 @@
         <item name="android:forceDarkAllowed">false</item>
     </style>
 
-    <style name="Theme.Zalpia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Zalpia.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

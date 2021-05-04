@@ -6,7 +6,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {UserData.class} ,version = 1 , exportSchema = false)
+import com.example.zalpia.ui.favorites.Favorites;
+
+@Database(entities = {Favorites.class} ,version = 1 , exportSchema = false)
 public abstract class DaoDatabases  extends RoomDatabase {
 
     private static DaoDatabases instance ;

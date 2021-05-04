@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.zalpia.Cat;
 import com.example.zalpia.Products;
 import com.example.zalpia.R;
 
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 public class MenuViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
-private  MutableLiveData<ArrayList<Cat>> catArray;
+private  MutableLiveData<ArrayList<CatModel>> catArray;
     public MenuViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is menu fragment");
@@ -24,25 +23,25 @@ private  MutableLiveData<ArrayList<Cat>> catArray;
     public LiveData<String> getText() {
         return mText;
     }
-    public LiveData<ArrayList<Cat>> getCatList() {
+    public LiveData<ArrayList<CatModel>> getCatList() {
         return catArray;
     }
 
-    public     ArrayList<Cat>  setCatArray(){
+    public    ArrayList<CatModel>  setCatArray(){
 
-        ArrayList<Cat> catList=new ArrayList<>();
+        ArrayList<CatModel> catList=new ArrayList<>();
         for(int i=0;i<7;i++){
             ArrayList<Products> productsList = new ArrayList<>();
             for(int j=0;j<8;j++){
                 Products product = new Products("Product "+j,"Description "+j+" this product is so beautiful i love sushi so much i hope i can cook it really really it's a good sushi  ");
                 productsList.add(product);
             }
-            Cat cat=new Cat("Category "+i,productsList);
+            CatModel cat=new CatModel("Category "+i,productsList);
             catList.add(cat);
         }
-        catList.get(0).setimage(R.drawable.cat1);
-        catList.get(1).setimage(R.drawable.cat2);
-        catList.get(2).setimage(R.drawable.cat3);
+        catList.get(0).setImage(R.drawable.cat1);
+        catList.get(1).setImage(R.drawable.cat2);
+        catList.get(2).setImage(R.drawable.cat3);
 
         ArrayList<Products> productsList0 = new ArrayList<>();
         Products product = new Products("piza ","Description  pizaa this product is so beautiful i love sushi so much i hope i can cook it really really it's a good sushi  ");

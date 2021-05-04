@@ -19,7 +19,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 public class MainActivity extends AppCompatActivity {
-    String token = "564";
+    String token = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

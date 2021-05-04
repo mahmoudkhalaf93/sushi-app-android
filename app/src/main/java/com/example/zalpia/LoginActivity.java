@@ -5,13 +5,12 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.zalpia.databinding.ActivityLoginBinding;
 import com.example.zalpia.room.DaoDatabases;
-import com.example.zalpia.room.UserData;
+import com.example.zalpia.ui.favorites.Favorites;
 
 import java.util.List;
 
@@ -35,18 +34,19 @@ ActivityLoginBinding binding;
 
         if(username.isEmpty() || password.isEmpty())return;
 
-        List<UserData> userData= DaoDatabases.getInstance(this).daoDML().getUserData();
+        //List<Favorites> userData= DaoDatabases.getInstance(this).daoDML().getFavorites();
+        startActivity(new Intent(this,HomeActivity.class));
+        overridePendingTransition(R.anim.splash_anim_fromsmall_to_big, R.anim.splash_anim_frombig_small);
+//        for(Favorites favorites1F : userData ){
 
-        for(UserData userData1f : userData ){
+//            if((favorites1F.getDescription().equals(username) || favorites1F.getPhone().equals(username)|| favorites1F.getName().equals(username))
+//            && favorites1F.getPassword().equals(password)) {
+//                startActivity(new Intent(this,HomeActivity.class));
+//                return;
+//            }
 
-            if((userData1f.getEmail().equals(username) ||userData1f.getPhone().equals(username)||userData1f.getName().equals(username))
-            && userData1f.getPassword().equals(password)) {
-                startActivity(new Intent(this,HomeActivity.class));
-                return;
-            }
-
-        }
-        Toast.makeText(this, "username or password are wrong ", Toast.LENGTH_SHORT).show();
+       // }
+       // Toast.makeText(this, "username or password are wrong ", Toast.LENGTH_SHORT).show();
 
     }
 

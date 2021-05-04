@@ -1,18 +1,13 @@
 package com.example.zalpia.ui.menu;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.DragAndDropPermissions;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,19 +15,12 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.zalpia.Cat;
-import com.example.zalpia.LoginActivity;
 import com.example.zalpia.OnSwipeTouchListener;
-import com.example.zalpia.ProductAdapter;
-import com.example.zalpia.Products;
 import com.example.zalpia.R;
-import com.example.zalpia.RegisterActivity;
 import com.example.zalpia.databinding.FragmentMenuBinding;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -48,6 +36,7 @@ public class MenuFragment extends Fragment {
 FragmentMenuBinding binding;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         binding= DataBindingUtil.inflate(inflater,R.layout.fragment_menu, container, false);
         menuViewModel = new ViewModelProvider(this).get(MenuViewModel.class);
         menuViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -65,9 +54,9 @@ FragmentMenuBinding binding;
         super.onViewCreated(view, savedInstanceState);
 
 
-menuViewModel.getCatList().observe(getViewLifecycleOwner(), new Observer<ArrayList<Cat>>() {
+menuViewModel.getCatList().observe(getViewLifecycleOwner(), new Observer<ArrayList<CatModel>>() {
     @Override
-    public void onChanged(ArrayList<Cat> cats) {
+    public void onChanged(ArrayList<CatModel> cats) {
 
         final int[] currentSwip = {0};
         binding.swipview.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
@@ -153,13 +142,16 @@ menuViewModel.getCatList().observe(getViewLifecycleOwner(), new Observer<ArrayLi
 
     }
     private void UpdateRecycleView(int catNumber){
-        menuViewModel.getCatList().observe(getViewLifecycleOwner(), new Observer<ArrayList<Cat>>() {
+        menuViewModel.getCatList().observe(getViewLifecycleOwner(), new Observer<ArrayList<CatModel>>() {
             @Override
-            public void onChanged(ArrayList<Cat> cats) {
+            public void onChanged(ArrayList<CatModel> cats) {
+
                 ProductAdapter productAdapter=new ProductAdapter(getActivity(),cats.get(catNumber).getProductsList());
                 binding.catRv.setAdapter(productAdapter);
+
+
                 binding.catName.setText(cats.get(catNumber).getName());
-                binding.catImage.setImageResource(cats.get(catNumber).getimage());
+                binding.catImage.setImageResource(cats.get(catNumber).getImage());
 
 
                 binding.SliderDots.removeAllViews();

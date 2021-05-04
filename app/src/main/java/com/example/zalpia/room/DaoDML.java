@@ -6,16 +6,18 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.zalpia.ui.favorites.Favorites;
+
 import java.util.List;
 
 @Dao
 public interface DaoDML {
     @Insert
-    void addUserDate(UserData userdata);
+    void addToFavorites(Favorites userdata);
     @Update
-    void UpdateUserDate(UserData userdata);
+    void UpdateFavorites(Favorites userdata);
     @Delete
-    void DeleteUserDate(UserData userdata);
-    @Query("SELECT * FROM userdata")
-    List<UserData> getUserData();
+    void DeleteFavorites(Favorites userdata);
+    @Query("SELECT * FROM Favorites")
+    List<Favorites> getFavorites();
 }
