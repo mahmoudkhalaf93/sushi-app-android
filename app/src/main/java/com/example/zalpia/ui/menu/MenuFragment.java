@@ -1,6 +1,7 @@
 package com.example.zalpia.ui.menu;
 
 import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,32 +20,23 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.zalpia.OnSwipeTouchListener;
 import com.example.zalpia.R;
 import com.example.zalpia.databinding.FragmentMenuBinding;
+import com.example.zalpia.room.CategoryModel;
 
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
+import java.util.List;
+import java.util.Locale;
 
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Completable;
-import io.reactivex.rxjava3.core.CompletableObserver;
-import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MenuFragment extends Fragment {
-
+//boolean isSwipRight=true ;
+    public  static int currentSwip = 0;
+    FragmentMenuBinding binding;
     private MenuViewModel menuViewModel;
 
-FragmentMenuBinding binding;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-        binding= DataBindingUtil.inflate(inflater,R.layout.fragment_menu, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false);
         menuViewModel = new ViewModelProvider(this).get(MenuViewModel.class);
-        menuViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
 
-            }
-        });
         return binding.getRoot();
     }
 
@@ -53,126 +45,89 @@ FragmentMenuBinding binding;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-menuViewModel.getCatList().observe(getViewLifecycleOwner(), new Observer<ArrayList<CatModel>>() {
-    @Override
-    public void onChanged(ArrayList<CatModel> cats) {
-
-        final int[] currentSwip = {0};
-        binding.swipview.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
+        menuViewModel.getCatList().observe(getViewLifecycleOwner(), (Observer<List<CategoryModel>>) cats ->
+                binding.swipview.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
             public void onSwipeTop() {
-
             }
+
             public void onSwipeRight() {
+               // isSwipRight=true;
+                if ( currentSwip > 0) {
 
-                if(currentSwip[0] >0){
-                    currentSwip[0]--;
-
-                    Animation anim2= AnimationUtils.loadAnimation(getActivity(),R.anim.imager_anim_fromshow_to_hidetorightside);
-                    binding.catImage.startAnimation(anim2);
-                    Completable
-                            .timer(200, TimeUnit.MILLISECONDS)
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(new CompletableObserver() {
-                                @Override
-                                public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull Disposable d) {
-
-                                }
-
-                                @Override
-                                public void onComplete() {
-                                    binding.catImage.startAnimation(anim2);
-                                    UpdateRecycleView(currentSwip[0]);
-                                    Animation anim3= AnimationUtils.loadAnimation(getActivity(),R.anim.imager_anim_fromhideleft_to_show);
-                                    binding.catImage.startAnimation(anim3);
-                                }
-
-                                @Override
-                                public void onError(@io.reactivex.rxjava3.annotations.NonNull Throwable e) {
-
-                                }
-                            });
-
+                    Animation anim2 = AnimationUtils.loadAnimation(getActivity(), R.anim.splash_anim_frombig_small);
+                    binding.previousCatImage.setImageURI(Uri.parse(cats.get( currentSwip).getImage()));
+                    binding.previousCatImage.startAnimation(anim2);
+                    currentSwip--;
+                    UpdateRecycleView( currentSwip);
+                    Animation anim3 = AnimationUtils.loadAnimation(getActivity(), R.anim.splash_anim_fromsmall_to_big);
+                    binding.nextCatImage.startAnimation(anim3);
 
                 }
 
             }
+
             public void onSwipeLeft() {
-                if(currentSwip[0] < cats.size()-1)
-                {
-                    currentSwip[0]++;
+                //isSwipRight=false;
+                if ( currentSwip< cats.size() - 1) {
 
-                    Animation anim1= AnimationUtils.loadAnimation(getActivity(),R.anim.image_anim_fromshowing_to_hidetoleftside);
-                    binding.catImage.startAnimation(anim1);
-                    Completable
-                            .timer(200, TimeUnit.MILLISECONDS)
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(new CompletableObserver() {
-                                @Override
-                                public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull Disposable d) {
-                                }
-                                @Override
-                                public void onComplete() {
-                                    UpdateRecycleView(currentSwip[0]);
-                                    Animation anim= AnimationUtils.loadAnimation(getActivity(),R.anim.image_anim_fromhideright_to_show);
-                                    binding.catImage.startAnimation(anim);
-                                }
-                                @Override
-                                public void onError(@io.reactivex.rxjava3.annotations.NonNull Throwable e) {
-                                }
-                            });
+                    Animation anim1 = AnimationUtils.loadAnimation(getActivity(), R.anim.splash_anim_frombig_small);
+                    binding.previousCatImage.setImageURI(Uri.parse(cats.get( currentSwip).getImage()));
+                    binding.previousCatImage.startAnimation(anim1);
+                    currentSwip++;
+                    UpdateRecycleView( currentSwip);
+                    Animation anim = AnimationUtils.loadAnimation(getActivity(), R.anim.splash_anim_fromsmall_to_big);
+                    binding.nextCatImage.startAnimation(anim);
 
                 }
             }
+
             public void onSwipeBottom() {
                 //     Toast.makeText(LoginActivity.this, "bottom", Toast.LENGTH_SHORT).show();
             }
 
-        });
-
-    }
-});
-        UpdateRecycleView(0);
-
-
-
+        }));
+        menuViewModel.setCatArray();
+        UpdateRecycleView( currentSwip);
 
 
     }
-    private void UpdateRecycleView(int catNumber){
-        menuViewModel.getCatList().observe(getViewLifecycleOwner(), new Observer<ArrayList<CatModel>>() {
-            @Override
-            public void onChanged(ArrayList<CatModel> cats) {
 
-                ProductAdapter productAdapter=new ProductAdapter(getActivity(),cats.get(catNumber).getProductsList());
+    private void UpdateRecycleView(int catNumber) {
+        menuViewModel.getCatList().observe(getViewLifecycleOwner(), (Observer<List<CategoryModel>>) categoryModels -> {
+
+            menuViewModel.getListOfItemsInCatLive().observe(getViewLifecycleOwner(), itemModels -> {
+                ProductAdapter productAdapter = new ProductAdapter(getActivity(), itemModels);
                 binding.catRv.setAdapter(productAdapter);
+            });
 
+            menuViewModel.setListOfItemsInCat(categoryModels.get(catNumber).getFirebaseId());
 
-                binding.catName.setText(cats.get(catNumber).getName());
-                binding.catImage.setImageResource(cats.get(catNumber).getImage());
-
-
-                binding.SliderDots.removeAllViews();
-                for (int i=0;i<cats.size();i++){
-                    if(i!=catNumber)
-                    { int sizes = getResources().getDimensionPixelSize(R.dimen._8sdp);
-                        ImageView dot=new ImageView(getActivity());
-                        dot.setImageResource(R.drawable.nonactive_dot);
-                        binding.SliderDots.addView(dot);
+                    if(Locale.getDefault().getDisplayLanguage().equals("العربية"))
+                    {
+                        binding.catName.setText(categoryModels.get(catNumber).getNameAr());
                     }
                     else {
-                        int sizes = getResources().getDimensionPixelSize(R.dimen._8sdp);
-                        ImageView dot=new ImageView(getActivity());
-                        dot.setImageResource(R.drawable.active_dot);
-                        binding.SliderDots.addView(dot);
+                        binding.catName.setText(categoryModels.get(catNumber).getName());
                     }
 
-                }
-            }
-        });
 
+            binding.nextCatImage.setImageURI(Uri.parse(categoryModels.get(catNumber).getImage()));
+//
+
+            binding.SliderDots.removeAllViews();
+            for (int i = 0; i < categoryModels.size(); i++) {
+           //     int sizes = getResources().getDimensionPixelSize(R.dimen._8sdp);
+                ImageView dot = new ImageView(getActivity());
+                if (i != catNumber) {
+                    dot.setImageResource(R.drawable.nonactive_dot);
+                } else {
+                    dot.setImageResource(R.drawable.active_dot);
+                }
+                binding.SliderDots.addView(dot);
+
+            }
+        }
+        );
 
     }
 

@@ -2,40 +2,192 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.zalpia.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_itemsFragment"
+            app:destination="@id/itemsFragment"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_order"
         android:name="com.example.zalpia.ui.order.OrderFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_order" />
+        android:label="nav_order"
+        tools:layout="@layout/fragment_order">
+        <action
+            android:id="@+id/action_nav_order_to_itemsFragment"
+            app:destination="@id/itemsFragment"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+        <action
+            android:id="@+id/action_nav_order_to_nav_mycart"
+            app:destination="@id/nav_mycart"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+        <action
+            android:id="@+id/action_nav_order_to_nav_favorites"
+            app:destination="@id/nav_favorites"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_menu"
         android:name="com.example.zalpia.ui.menu.MenuFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_menu" />
-    <fragment
-        android:id="@+id/nav_restaurant"
-        android:name="com.example.zalpia.ui.restaurant.RestaurantFragment"
-        android:label="RestaurantFragment" />
+        android:label="nav_menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_nav_menu_to_itemProfileFragment"
+            app:destination="@id/itemProfileFragment"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+    </fragment>
     <fragment
         android:id="@+id/nav_favorites"
         android:name="com.example.zalpia.ui.favorites.FavoritesFragment"
-        android:label="FavoritesFragment" />
+        android:label="FavoritesFragment"
+        tools:layout="@layout/fragment_favorites">
+        <action
+            android:id="@+id/action_nav_favorites_to_itemProfileFavFragment"
+            app:destination="@id/itemProfileFavFragment"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+        <action
+            android:id="@+id/action_nav_favorites_to_nav_menu"
+            app:destination="@id/nav_menu"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+    </fragment>
     <fragment
         android:id="@+id/nav_mycart"
         android:name="com.example.zalpia.ui.mycart.MyCartFragment"
-        android:label="MyCartFragment" />
+        android:label="MyCartFragment"
+        tools:layout="@layout/fragment_my_cart" >
+        <action
+            android:id="@+id/action_nav_mycart_to_nav_order"
+            app:destination="@id/nav_order"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+    </fragment>
     <fragment
         android:id="@+id/nav_myaccount"
         android:name="com.example.zalpia.ui.myaccount.MyAccountFragment"
-        android:label="MyAccountFragment" />
+        android:label="MyAccountFragment"
+        tools:layout="@layout/fragment_my_account" >
+        <action
+            android:id="@+id/action_nav_myaccount_to_phoneVerifiyFragment"
+            app:destination="@id/phoneVerifiyFragment"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/itemProfileFavFragment"
+        android:name="com.example.zalpia.ui.itemprofilefav.ItemProfileFavFragment"
+        android:label="ItemProfileFavFragment"
+        tools:layout="@layout/fragment_item_profile_fav">
+        <action
+            android:id="@+id/action_itemProfileFavFragment_to_nav_mycart"
+            app:destination="@id/nav_mycart"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+        <argument
+            android:name="itemModel"
+            app:argType="com.example.zalpia.room.ItemModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfileFragment"
+        android:name="com.example.zalpia.ui.itemprofile.ItemProfileFragment"
+        android:label="ItemProfileFragment"
+        tools:layout="@layout/fragment_item_profile">
+        <action
+            android:id="@+id/action_itemProfileFragment_to_nav_mycart"
+            app:destination="@id/nav_mycart"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+        <argument
+            android:name="itemModel"
+            app:argType="com.example.zalpia.room.ItemModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemsFragment"
+        android:name="com.example.zalpia.ui.items.ItemsFragment"
+        android:label="ItemsFragment"
+        tools:layout="@layout/fragment_items">
+        <action
+            android:id="@+id/action_itemsFragment_to_nav_mycart"
+            app:destination="@id/nav_mycart"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+        <action
+            android:id="@+id/action_itemsFragment_to_nav_favorites"
+            app:destination="@id/nav_favorites"
+            app:enterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:exitAnim="@anim/fragment_anim_from_show_to_hide"
+            app:popEnterAnim="@anim/fragment_anim_from_hide_to_show"
+            app:popExitAnim="@anim/fragment_anim_from_show_to_hide" />
+        <argument android:name="name" />
+        <argument android:name="firbaseId" />
+        <argument
+            android:name="offerOrCats"
+            app:argType="string" />
+        <argument
+            android:name="nameAr"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_restaurant"
+        android:name="com.example.zalpia.ui.restaurant.RestaurantFragment"
+        android:label="RestaurantFragment"
+        tools:layout="@layout/fragment_restaurant" />
+    <fragment
+        android:id="@+id/nav_aboutus"
+        android:name="com.example.zalpia.ui.AboutUsFragment"
+        tools:layout="@layout/fragment_about_us"
+        android:label="AboutUsFragment" />
+    <fragment
+        android:id="@+id/nav_contactus"
+        android:name="com.example.zalpia.ui.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/phoneVerifiyFragment"
+        android:name="com.example.zalpia.ui.phoneverify.PhoneVerifiyFragment"
+        android:label="phone_verifiy_fragment"
+        tools:layout="@layout/phone_verifiy_fragment" >
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
 </navigation>

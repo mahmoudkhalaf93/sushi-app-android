@@ -22,15 +22,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:cardCornerRadius="@dimen/_10sdp"
         >
-        <ImageView
+        <com.facebook.drawee.view.SimpleDraweeView
+            fresco:placeholderImage="@drawable/user"
+            fresco:placeholderImageScaleType="centerCrop"
             android:id="@+id/my_image_view"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
-          android:scaleType="centerCrop"
-            android:src="@drawable/my_photo"
+
             />
     </androidx.cardview.widget.CardView>
-  
+
     <ImageView
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
@@ -38,17 +39,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
 
 
 
 
     <TextView
         android:id="@+id/user_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="mahmoud khalaf"
+        tools:text="mahmoud khalaf"
         android:fontFamily="@font/calibrib"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toTopOf="@+id/user_email"
@@ -58,7 +59,7 @@
         android:id="@+id/user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="modyelsayd54@gmail.com"
+        tools:text="modyelsayd54@gmail.com"
         android:fontFamily="@font/calibri"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

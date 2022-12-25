@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_24sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/liners"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:background="@drawable/stroke_dialog"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_vertical">
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/ccp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:ccp_autoDetectCountry="true"
+        android:visibility="gone"
+        app:ccp_showFullName="false"
+        app:ccp_autoFormatNumber="true"
+        app:ccp_showNameCode="false"
+        app:ccp_countryPreference="us,in"
+        app:ccp_showPhoneCode="true"
+        />
+    <EditText
+        android:id="@+id/phone_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_2sdp"
+       android:background="@color/white"
+        android:fontFamily="@font/calibrib"
+        android:gravity="center"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+
+        android:textColor="@color/light_orange"
+        android:textSize="@dimen/_16sdp"
+        android:autofillHints="@string/phone_number" />
+    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/update_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:text="@string/update"
+        android:textSize="@dimen/_12sdp"
+        app:cornerRadius="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="@+id/liners"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/liners" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

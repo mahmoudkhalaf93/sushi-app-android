@@ -13,4 +13,6 @@
     <color name="gray_text_in_profilepic">#aeaead</color>
     <color name="gray_background_profilepic">#F7F7F7</color>
     <color name="gray_background_profilepic_strong">#ebebeb</color>
+    <color name="green_open">#8BD875</color>
+    <color name="status_red">#D87575</color>
 </resources>

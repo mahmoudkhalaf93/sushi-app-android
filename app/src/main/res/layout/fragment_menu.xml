@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -26,12 +27,13 @@
                 android:elevation="22dp"
                 android:fontFamily="@font/calibrib"
                 android:gravity="center"
-                android:text="Category 1"
+                android:text="@string/cat1test"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_22sdp"
                 app:layout_constraintBottom_toTopOf="@+id/SliderDots"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                tools:targetApi="lollipop" />
 
             <LinearLayout
                 android:id="@+id/swipview"
@@ -49,7 +51,8 @@
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@+id/cardView20"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                tools:targetApi="lollipop">
 
                 <!--                <ImageView-->
                 <!--                    android:layout_width="wrap_content"-->
@@ -59,13 +62,14 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardView20"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/_225sdp"
                 android:elevation="1dp"
                 app:cardCornerRadius="@dimen/_30sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="lollipop">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView2"
@@ -82,15 +86,25 @@
                         android:elevation="1dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/cat_image"
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            fresco:placeholderImage="@drawable/backgroud_logo"
+                            fresco:placeholderImageScaleType="centerCrop"
+                            android:id="@+id/previous_cat_image"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/black"
                             android:foreground="@drawable/grad5"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/cat3" />
+                            tools:targetApi="m" />
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            fresco:placeholderImage="@drawable/backgroud_logo"
+                            fresco:placeholderImageScaleType="centerCrop"
+                            android:id="@+id/next_cat_image"
+                            android:layout_width="match_parent"
+                            android:elevation="12dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/black"
+                            android:foreground="@drawable/grad5"
+                            tools:targetApi="m" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

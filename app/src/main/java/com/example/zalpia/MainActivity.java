@@ -1,5 +1,6 @@
 package com.example.zalpia;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,19 +21,13 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 public class MainActivity extends AppCompatActivity {
-    String token = "";
+FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this);
         setContentView(R.layout.activity_main);
-
-        // token= DaoDatabases.getInstance(this).daoDML().getUserData().get(0).getToken();
-        if (!token.isEmpty()) {
-            //get the user data from the api
-        }
-        String finalToken = token;
 
         Completable
                 .timer(1, TimeUnit.SECONDS)
@@ -41,11 +37,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
+//                        if (firebaseAuth.getCurrentUser()!=null) {
+//                            //get the UserModell data from the api
+//                        }
                     }
 
                     @Override
                     public void onComplete() {
-                        if (token.isEmpty()) {
+                        if (firebaseAuth.getCurrentUser()==null) {
                             //if no token go to login_register screen
                             setContentView(R.layout.activity_log_reg);
 //                            startActivity(new Intent(MainActivity.this,LogRegActivity.class));
@@ -65,45 +64,17 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
-//        Observable.interval(1, TimeUnit.SECONDS)
-//                .subscribeOn(Schedulers.io())
-//                .takeWhile(new Predicate<Long>() {
-//                    @Override
-//                    public boolean test(Long aLong) throws Throwable {
-//                        return aLong < 3;
-//                    }
-//                })
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Observer<Long>() {
-//                    @Override
-//                    public void onSubscribe(@NonNull Disposable d) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onNext(@NonNull Long aLong) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onError(@NonNull Throwable e) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onComplete() {
-//
-//                    }
-//                });
-
-
     }
 
     public void SignIn(View view) {
         startActivity(new Intent(this, LoginActivity.class));
+        overridePendingTransition(R.anim.splash_anim_fromsmall_to_big, R.anim.splash_anim_frombig_small);
+        finish();
     }
 
     public void Register(View view) {
         startActivity(new Intent(this, RegisterActivity.class));
+        overridePendingTransition(R.anim.splash_anim_fromsmall_to_big, R.anim.splash_anim_frombig_small);
+        finish();
     }
 }

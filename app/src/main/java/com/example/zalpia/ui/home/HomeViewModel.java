@@ -1,60 +1,95 @@
 package com.example.zalpia.ui.home;
 
+import android.util.Log;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.zalpia.R;
+import com.example.zalpia.room.Branches;
+import com.example.zalpia.room.RestaurantsModel;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class HomeViewModel extends ViewModel {
-
-    private MutableLiveData<String> mText;
-    private MutableLiveData<ArrayList<OfferModel>> offerList;
+    private static final String TAG = "HomeViewModel1";
+    private final MutableLiveData<ArrayList<OfferModel>> offerListMutable;
+    FirebaseFirestore firestorm = FirebaseFirestore.getInstance();
 
     public HomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
-        offerList = new MutableLiveData<>();
-        offerList.setValue(setOfferList());
+
+
+        offerListMutable = new MutableLiveData<>();
+
     }
 
-    public LiveData<String> getText() {
-        return mText;
+
+    public LiveData<ArrayList<OfferModel>> getOfferList() {
+        return offerListMutable;
     }
 
-    public  LiveData<ArrayList<OfferModel>> getOfferList()
-    {
-        return offerList;
-    }
+    public void setOfferList() {
+//        RestaurantsModel modl=new RestaurantsModel();
+//        ArrayList<GeoPoint> loctino=new ArrayList<>();
+//        loctino.add(new GeoPoint(30.043158042861652,31.200589226642364));
+//        loctino.add(new GeoPoint(30.056828126532665,31.21101878037916));
+//        loctino.add(new GeoPoint(30.048544447739943, 31.189602855701136));
+//        loctino.add(new GeoPoint(30.03264411666857, 31.190504062964823));
+//        ArrayList<Branches> branches=new ArrayList<>();
+//        branches.add(new Branches(loctino.get(0),"doki","open"));
+//        branches.add(new Branches(loctino.get(1),"giza","open"));
+//        branches.add(new Branches(loctino.get(2),"cairo","close"));
+//        branches.add(new Branches(loctino.get(3),"el mohandsen","open"));
+//        modl.setBranches(branches);
+//        modl.setName("mody");
+//        modl.setPhone("01064587878");
+//        firestorm.collection("restaurants").document("sushir12").set(modl).addOnSuccessListener(new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void unused) {
+//                Log.i(TAG, "onSuccess: uploaded location XXXXXXXXXXX");
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull @NotNull Exception e) {
+//                Log.i(TAG, "Faild: not uploaded location JJJJJJJJJJJJJJ");
+//            }
+//        });
 
-    private ArrayList<OfferModel> setOfferList() {
+
         ArrayList<OfferModel> offerList2 = new ArrayList<>();
-        OfferModel offerModel0 = new OfferModel("Sunday", "",
-                "Free lyrimShrimp", R.drawable.cat1, true);
-        offerList2.add(offerModel0);
-        OfferModel offerModel1 = new OfferModel("15:00 to 23:30", "50%",
-                "discount on prtof", R.drawable.cat2, false);
-        offerList2.add(offerModel1);
-        OfferModel offerModel2 = new OfferModel("12:00 to 22:00", "75%",
-                "discount on prtof", R.drawable.cat3, false);
-        offerList2.add(offerModel2);
-        OfferModel offerModel3 = new OfferModel("Sunday", "",
-                "Free lyrimShrimp", R.drawable.catdef, true);
-        offerList2.add(offerModel3);
-        OfferModel offerModel4 = new OfferModel("Sunday", "",
-                "Free lyrimShrimp", R.drawable.catdef, true);
-        offerList2.add(offerModel4);
-        OfferModel offerModel5 = new OfferModel("Sunday", "",
-                "Free lyrimShrimp", R.drawable.catdef, true);
-        offerList2.add(offerModel5);
-        OfferModel offerModel6 = new OfferModel("Sunday", "",
-                "Free lyrimShrimp", R.drawable.catdef, true);
-        offerList2.add(offerModel6);
-        OfferModel offerModel7 = new OfferModel("Sunday", "",
-                "Free lyrimShrimp", R.drawable.catdef, true);
-        offerList2.add(offerModel7);
-        return offerList2;
+
+        firestorm.collection("offers").get().addOnSuccessListener(queryDocumentSnapshots -> {
+            if (!queryDocumentSnapshots.isEmpty()) {
+
+            for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+
+
+                OfferModel offerModel = document.toObject(OfferModel.class);
+                offerModel.setFirebaseId(document.getId());
+                Log.i(TAG, "setOfferList: tstxX " + offerModel.toString());
+                if (offerModel.getNameline2().isEmpty()) {
+                    offerModel.setNameline2(offerModel.getNameline1());
+                    offerModel.setNameline1("");
+                }
+
+                offerList2.add(offerModel);
+
+
+            }
+            offerListMutable.setValue(offerList2);
+        }
+
+        }).addOnFailureListener(e -> Log.w(TAG, "Error getting documents.", e));
+
+
     }
 }

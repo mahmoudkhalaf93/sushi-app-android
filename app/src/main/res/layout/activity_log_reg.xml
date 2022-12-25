@@ -15,10 +15,10 @@
         android:src="@drawable/sign_reg_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
 
     <ImageView
-        android:id="@+id/imageView6"
         android:layout_width="@dimen/_70sdp"
         android:layout_height="@dimen/_70sdp"
         android:layout_marginBottom="@dimen/_80sdp"
@@ -27,7 +27,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/saz"
@@ -38,7 +39,8 @@
         android:src="@drawable/sign_reg_sushi_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        android:contentDescription="@string/todo" />
     <Button
         android:id="@+id/reg_button_logreg"
         android:layout_width="match_parent"
@@ -55,7 +57,6 @@
         app:layout_constraintTop_toBottomOf="@+id/saz" />
 
     <Button
-        android:id="@+id/login_button_logreg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
@@ -73,7 +74,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/terms_and_conditions"
+        android:text="@string/terms_and_conditions_menu"
 android:layout_marginBottom="@dimen/_16sdp"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"

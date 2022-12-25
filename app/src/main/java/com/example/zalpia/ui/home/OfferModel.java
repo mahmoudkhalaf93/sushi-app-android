@@ -1,55 +1,104 @@
 package com.example.zalpia.ui.home;
 
+import org.jetbrains.annotations.NotNull;
+
 public class OfferModel {
-    String timeText, offerNameLine1,offerNameLine2;
-    int offerimage;
-    Boolean isImageCalendar;
+    String time, nameline1, nameline2,timeAr, nameline1Ar, nameline2Ar, image,firebaseId;
 
-    public OfferModel(String timeText, String offerNameLine1, String offerNameLine2, int offerimage, Boolean isImageCalendar) {
-        this.timeText = timeText;
-        this.offerNameLine1 = offerNameLine1;
-        this.offerNameLine2 = offerNameLine2;
-        this.offerimage = offerimage;
-        this.isImageCalendar = isImageCalendar;
+    Boolean isTimeCalendar;
+    public OfferModel(){
+
     }
 
-    public String getOfferNameLine2() {
-        return offerNameLine2;
+    public String getTimeAr() {
+        return timeAr;
     }
 
-    public void setOfferNameLine2(String offerNameLine2) {
-        this.offerNameLine2 = offerNameLine2;
+    public void setTimeAr(String timeAr) {
+        this.timeAr = timeAr;
     }
 
-    public String getTimeText() {
-        return timeText;
+    public String getNameline1Ar() {
+        return nameline1Ar;
     }
 
-    public void setTimeText(String timeText) {
-        this.timeText = timeText;
+    public void setNameline1Ar(String nameline1Ar) {
+        this.nameline1Ar = nameline1Ar;
     }
 
-    public String getOfferNameLine1() {
-        return offerNameLine1;
+    public String getNameline2Ar() {
+        return nameline2Ar;
     }
 
-    public void setOfferNameLine1(String offerNameLine1) {
-        this.offerNameLine1 = offerNameLine1;
+    public void setNameline2Ar(String nameline2Ar) {
+        this.nameline2Ar = nameline2Ar;
     }
 
-    public int getOfferimage() {
-        return offerimage;
+    public String getNameline2() {
+        return nameline2;
     }
 
-    public void setOfferimage(int offerimage) {
-        this.offerimage = offerimage;
+    public void setNameline2(String nameline2) {
+        this.nameline2 = nameline2;
     }
 
-    public Boolean getIsImageCalendar() {
-        return isImageCalendar;
+    public String getTime() {
+        return time;
     }
 
-    public void setIsImageCalendar(Boolean isImageCalendar) {
-        this.isImageCalendar = isImageCalendar;
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getNameline1() {
+        return nameline1;
+    }
+
+    public void setNameline1(String nameline1) {
+        this.nameline1 = nameline1;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Boolean getIsTimeCalendar() {
+        return isTimeCalendar;
+    }
+
+    public void setIsTimeCalendar(Boolean isTimeCalendar) {
+        this.isTimeCalendar = isTimeCalendar;
+    }
+
+    public String getFirebaseId() {
+        return firebaseId;
+    }
+
+    public void setFirebaseId(String firebaseId) {
+        this.firebaseId = firebaseId;
+    }
+
+    public Boolean getTimeOrCalendar() {
+        return isTimeCalendar;
+    }
+
+    public void setTimeOrCalendar(Boolean timeOrCalendar) {
+        isTimeCalendar = timeOrCalendar;
+    }
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "OfferModel{" +
+                "timeText='" + time + '\'' +
+                ", offerNameLine1='" + nameline1 + '\'' +
+                ", offerNameLine2='" + nameline2 + '\'' +
+                ", offerimage=" + image +
+                ", isTimeOrCalendar=" + isTimeCalendar +
+                '}';
     }
 }

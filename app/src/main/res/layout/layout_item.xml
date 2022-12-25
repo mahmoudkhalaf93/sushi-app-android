@@ -2,6 +2,7 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -19,12 +20,13 @@
             android:id="@+id/cardView4"
             android:layout_width="@dimen/_72sdp"
             android:layout_height="@dimen/_72sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
             android:elevation="@dimen/_10sdp"
             app:cardCornerRadius="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop">
         <androidx.cardview.widget.CardView
           android:layout_margin="@dimen/_2sdp"
               android:layout_width="match_parent"
@@ -34,13 +36,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-            <ImageView
+            <com.facebook.drawee.view.SimpleDraweeView
+                fresco:placeholderImage="@drawable/backgroud_logo"
+                fresco:placeholderImageScaleType="centerCrop"
                 android:id="@+id/item_image"
                 android:layout_width="match_parent"
 
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pizzad" />
+                />
         </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
 
@@ -62,12 +65,13 @@
             android:layout_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cardElevation="1dp"
-            android:paddingLeft="@dimen/_40sdp"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingEnd="@dimen/_40sdp"
             app:cardCornerRadius="@dimen/_20sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            >
+            tools:targetApi="lollipop">
             <LinearLayout
                 android:id="@+id/stroklayout"
                 android:layout_width="match_parent"
@@ -85,12 +89,13 @@
             android:id="@+id/cardView5"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"
-            android:layout_marginRight="@dimen/_27sdp"
+            android:layout_marginEnd="@dimen/_27sdp"
             android:elevation="@dimen/_10sdp"
             app:cardCornerRadius="@dimen/_180sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop">
 
             <ImageView
                 android:id="@+id/right_icon"
@@ -98,7 +103,8 @@
                 android:layout_height="match_parent"
                 android:padding="@dimen/_8sdp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:contentDescription="@string/todo" />
 
         </androidx.cardview.widget.CardView>
 
@@ -107,12 +113,12 @@
             android:layout_width="0dp"
             android:layout_height="44dp"
             android:layout_marginTop="@dimen/_5sdp"
-            android:text="Item11add"
+            tools:text="Item11add"
             android:maxLength="9"
             android:fontFamily="@font/calibri"
             android:textSize="@dimen/_22sdp"
             android:textColor="@color/black"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             app:layout_constraintStart_toEndOf="@+id/cardView4"
             app:layout_constraintTop_toTopOf="@+id/cardView4" />
 
@@ -120,12 +126,13 @@
             android:id="@+id/itme_description"
             android:layout_width="0dp"
             android:layout_height="44dp"
-            android:layout_marginLeft="@dimen/_8sdp"
-            android:paddingRight="@dimen/_2sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:paddingStart="@dimen/_2sdp"
             android:maxLength="64"
             android:maxLines="2"
             android:fontFamily="@font/calibri"
-            android:text="this product is so nice i want to bye three item of this product"
+            tools:text="this product is so nice i want to bye three item of this product"
             android:textColor="@color/gray"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintEnd_toStartOf="@+id/cardView5"
@@ -137,11 +144,12 @@
             android:layout_width="0dp"
             android:layout_height="44dp"
             android:fontFamily="@font/calibri"
-            android:layout_marginRight="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
             android:maxLength="15"
             tools:text="60.59"
+            android:gravity="center"
             android:textColor="@color/gray_text_in_profilepic"
-            android:textSize="@dimen/_22sdp"
+            android:textSize="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@+id/cardView3"
 
             app:layout_constraintTop_toTopOf="@+id/itme_name" />

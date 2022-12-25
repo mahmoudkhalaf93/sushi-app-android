@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Sushi</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_home" translatable="false">HomeActivity</string>
+
+    <string name="facebook_app_id">958507528304697</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="sign_in">Sign In !</string>
     <string name="username">Username</string>
 
@@ -12,12 +12,12 @@
     <string name="forget_password">Forget Password?</string>
     <string name="sign_in_button">Sign In</string>
     <string name="create_account">Don\'t have an account, \t</string>
-    <string name="todo">TODO</string>
+
     <string name="or">OR</string>
 
     <string name="sign_in_now">Sign in Now</string>
     <string name="register">Register</string>
-    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="terms_and_conditions_menu">Terms and Conditions</string>
     <string name="registeri">Register !</string>
     <string name="e_mail">E-mail</string>
     <string name="phone_number">Phone Number</string>
@@ -26,9 +26,80 @@
     <string name="already_have_an_account">Already have an account, \t </string>
     <string name="sign_inq">Sign in?</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="english">English</string>
     <string name="password_stars">*********</string>
 
     <string name="language">Language</string>
+    <string name="todo">TODO</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="txt_text">i love this product so very much mo r e sd than any another product dsi love this product so very much mo r e sd than any another product i love this product so very mxxuch mo r e sd than any another product i love this product so very much mo r e sd than any another product ax5</string>
+    <string name="dialog_fire_missiles">Do you want to delete it ?</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="send">Send</string>
+    <string name="aboutus" translatable="false">About Us :\nthis app developed by mahmoud khalaf allah mohamed elsayd</string>
+    <string name="phone" translatable="false">Phone : +201064587878</string>
+    <string name="email" translatable="false">email : mahmoudkhalafeg93@gmail.com</string>
+    <string name="linkedin" translatable="false">linkedin : www.linkedin.com/in/mahmoudkhalaf1/</string>
+    <string name="github" translatable="false">github : github.com/mahmoudkhalaf93</string>
+
+    <string name="add_more">Add More</string>
+    <string name="descritionTest">i love this produFct so very much mo r e sd than any another product</string>
+
+
+    <string name="cat1test">Category 1</string>
+    <string name="purchase">Purchase</string>
+    <string name="you_ll_pay">you\'ll pay</string>
+    <string name="test_money" translatable="false">0.0 EGP</string>
+
+    <string name="address">ADDRESS</string>
+    <string name="get_direction">Get Direction</string>
+    <string name="_0" translatable="false">0</string>
+    <string name="code">code</string>
+    <string name="update">update</string>
+    <string name="verifiy">verifiy</string>
+    <string name="order_menu">Order</string>
+    <string name="menu_menu">Menu</string>
+    <string name="restaurant_menu">Restaurant</string>
+    <string name="favorites_menu">Favorites</string>
+    <string name="my_cart_menu">My Cart</string>
+    <string name="my_account_menu">My Account</string>
+    <string name="about_us_menu">About Us</string>
+    <string name="contact_us_menu">Contact Us</string>
+
+    <string name="logout">Logout</string>
+    <string name="Removed">Removed</string>
+    <string name="addToFav">Added to Favorite</string>
+    <string name="already">already added</string>
+    <string name="added">added</string>
+    <string name="added_to_Fav">Added to Favorite</string>
+    <string name="name_myacc">Name</string>
+    <string name="done">done</string>
+    <string name="already_ver">already verified</string>
+    <string name="email_has_ben_sent">email has been sent</string>
+    <string name="email_acc">email</string>
+    <string name="new_password">New Password</string>
+    <string name="set_phone">send the verification code</string>
+    <string name="what_is_your_number">What is your number</string>
+    <string name="Uploading">Uploading...</string>
+    <string name="Uploaded">Uploaded</string>
+    <string name="EGP"> EGP</string>
+    <string name="your_item_has_been_deleted">your item has been deleted</string>
+    <string name="phone_verified">Phone Verified</string>
+    <string name="save_this_location">Save this location</string>
+    <string name="my_location">my location</string>
+    <string name="save_location">Save Location</string>
+    <string name="do_you_want_to_save">do you want to save this location as your location ?</string>
+    <string name="nearest"> - nearest to you</string>
+    <string name="open">open</string>
+    <string name="closed">closed</string>
+    <string name="away_by">Away by</string>
+    <string name="Km"> Km</string>
+    <string name="the_email_has_sent">the email has been sent please check your email</string>
+    <string name="connection_error">Connection Error</string>
+    <string name="pls_conncet_internet">please connect to the internet</string>
+    <string name="item_deleted">item deleted</string>
+
+
+
 </resources>

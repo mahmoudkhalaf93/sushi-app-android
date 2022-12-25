@@ -17,8 +17,11 @@
             android:id="@+id/imageView11"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_140sdp"
+            android:layout_marginStart="@dimen/_minus2sdp"
+            android:scaleType="centerCrop"
             android:src="@drawable/shopping_cart_background"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/mycart_cardView7"
@@ -29,7 +32,8 @@ android:layout_marginBottom="@dimen/_8sdp"
             android:elevation="0dp"
             app:cardCornerRadius="@dimen/_20sdp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintTop_toBottomOf="@+id/imageView11">
+            app:layout_constraintTop_toBottomOf="@+id/imageView11"
+            tools:targetApi="lollipop">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/mycart_rv_orders_cat"
@@ -50,60 +54,69 @@ android:layout_marginBottom="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_8sdp"
             android:layout_marginLeft="@dimen/_24sdp"
             android:layout_marginRight="@dimen/_24sdp"
-            android:text="Purchase"
-
+            android:text="@string/purchase"
+android:background="@drawable/soldin_map"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_16sdp"
             android:background="@drawable/soldbutton"
             android:orientation="horizontal"
             android:padding="@dimen/_2sdp"
             app:layout_constraintBottom_toTopOf="@+id/purchase"
             app:layout_constraintEnd_toEndOf="@+id/purchase"
-            app:layout_constraintStart_toEndOf="@+id/imageView10">
+            app:layout_constraintStart_toEndOf="@+id/add_more_in_cart">
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_8sdp"
-                android:text="you'll pay"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/you_ll_pay"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView4"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/total_price"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:layout_height="0dp"
                 android:background="@drawable/price_shape"
                 android:fontFamily="@font/calibrib"
                 android:padding="@dimen/_4sdp"
-                android:text="160.57 EGP"
+                android:gravity="center"
+                android:maxLength="10"
+                android:text="@string/test_money"
                 android:textColor="@color/light_orange"
-                android:textSize="@dimen/_16sdp"
+                android:textSize="@dimen/_14sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/add_more_in_cart"
             android:layout_width="@dimen/_100sdp"
-
+android:clickable="true"
+            android:outlineSpotShadowColor="@color/gray"
+            android:outlineAmbientShadowColor="@color/gray"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginBottom="@dimen/_16sdp"
             android:src="@drawable/add_more"
             app:layout_constraintBottom_toTopOf="@+id/purchase"
-            app:layout_constraintStart_toStartOf="@+id/purchase" />
+            app:layout_constraintStart_toStartOf="@+id/purchase"
+            android:contentDescription="@string/todo"
+            android:focusable="true"
+            tools:targetApi="p" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

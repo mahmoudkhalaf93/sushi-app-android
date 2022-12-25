@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.phoneverify.PhoneVerifiyFragment">
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:paddingBottom="@dimen/_180sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/layer_2_copy_5"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:id="@+id/logooat"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/layer_2"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/phonenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@+id/code_Verifiy"
+            app:layout_constraintEnd_toEndOf="@+id/code_Verifiy"
+            app:layout_constraintStart_toStartOf="@+id/code_Verifiy"
+            tools:text="01064587878" />
+
+        <EditText
+            android:id="@+id/code_Verifiy"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_110sdp"
+            android:background="@drawable/stroke_dialog"
+            android:gravity="center"
+            android:hint="@string/code"
+            android:inputType="text"
+            android:imeOptions="actionSend"
+            android:maxLength="15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15"
+            android:autofillHints="code" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/send_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:text="@string/send"
+            app:layout_constraintEnd_toEndOf="@+id/code_Verifiy"
+            app:layout_constraintStart_toStartOf="@+id/code_Verifiy"
+            app:layout_constraintTop_toBottomOf="@+id/code_Verifiy" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+
+            android:layout_height="@dimen/_140sdp"
+            android:src="@drawable/shopping_cart_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="-27dp"
+            android:contentDescription="@string/todo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

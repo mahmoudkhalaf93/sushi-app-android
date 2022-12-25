@@ -10,36 +10,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         tools:context=".ui.home.HomeFragment">
 
-        <TextView
-            android:id="@+id/text_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_290sdp"
+            android:layout_height="@dimen/_260sdp"
             android:elevation="2dp"
-            android:paddingLeft="@dimen/_minus20sdp"
-            android:paddingRight="@dimen/_minus32sdp"
+           android:paddingBottom="@dimen/_10sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/layer_10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo"
+            tools:targetApi="lollipop" />
 
         <!--        app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
 
@@ -47,7 +34,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginTop="@dimen/_260sdp"
+                android:layout_marginTop="@dimen/_270sdp"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +46,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_homepage_offers"
                     android:layout_width="wrap_content"
+
                     android:layout_height="match_parent"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="2"

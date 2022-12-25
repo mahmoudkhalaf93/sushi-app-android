@@ -12,11 +12,9 @@
         android:layout_height="match_parent"
         tools:context=".LoginActivity">
 
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
-
             android:layout_height="@dimen/_200sdp"
             android:contentDescription="@string/todo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,13 +24,13 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_8sdp"
             android:fontFamily="@font/calibrib"
-            android:gravity="end"
+
             android:lineSpacingExtra="-11sp"
             android:text="@string/sign_in"
             android:textColor="#322e2b"
@@ -45,40 +43,68 @@
             android:id="@+id/username_login"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
-            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_16sdp"
-            android:layout_marginRight="@dimen/_40sdp"
-            android:autofillHints=""
-            android:drawableLeft="@drawable/user"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:autofillHints="@string/username"
+            android:importantForAutofill="auto"
+            android:drawableStart="@drawable/user"
             android:drawablePadding="@dimen/_13sdp"
             android:hint="@string/username"
             android:inputType="textEmailAddress"
             android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+<!--        <EditText-->
+<!--            android:id="@+id/password_login"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_40sdp"-->
+<!--            android:layout_marginStart="@dimen/_30sdp"-->
+<!--            android:layout_marginTop="@dimen/_16sdp"-->
+<!--            android:layout_marginEnd="@dimen/_40sdp"-->
+<!--            android:autofillHints="@string/password"-->
+<!--            android:importantForAutofill="auto"-->
+<!--            android:drawableStart="@drawable/user"-->
+<!--            android:drawablePadding="@dimen/_13sdp"-->
+<!--            android:hint="@string/username"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:paddingStart="@dimen/_10sdp"-->
+<!--            android:paddingEnd="@dimen/_10sdp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/username_login" />-->
+
+
 
         <EditText
             android:id="@+id/password_login"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
-            android:layout_marginLeft="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="@dimen/_40sdp"
-            android:drawableLeft="@drawable/password"
-            android:drawablePadding="@dimen/_13sdp"
+            android:drawableStart="@drawable/password"
+            android:autofillHints="@string/password"
             android:hint="@string/password"
+
             android:inputType="textPassword"
-            android:paddingLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:importantForAutofill="auto"
+            android:drawablePadding="@dimen/_13sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username_login"
-            android:autofillHints="" />
+            />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="@dimen/_40sdp"
+            android:onClick="ForgetPassword"
+            android:layout_marginEnd="@dimen/_40sdp"
             android:text="@string/forget_password"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,8 +139,8 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_2sdp"
-                android:layout_marginLeft="@dimen/_16sdp"
-                android:layout_marginRight="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
                 android:layout_weight="1"
                 android:background="@color/light_orange"
                 android:contentDescription="@string/todo" />
@@ -129,8 +155,8 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_2sdp"
-                android:layout_marginLeft="@dimen/_3sdp"
-                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
                 android:layout_weight="1"
                 android:background="@color/light_orange"
                 android:contentDescription="@string/todo" />
@@ -141,18 +167,41 @@
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_50sdp"
             android:src="@drawable/google"
+            android:onClick="LoginGoogle"
             app:layout_constraintStart_toStartOf="@+id/signin_button"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
             android:contentDescription="@string/todo" />
 
-        <ImageView
+
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/imageView4"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_50sdp"
-            android:src="@drawable/facebook"
+            android:layout_height="@dimen/_40sdp"
+            android:foreground="@drawable/facebook"
+            app:cardCornerRadius="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@+id/signin_button"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            android:contentDescription="@string/todo" />
+            >
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/button_sign_in"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                />
+        </androidx.cardview.widget.CardView>
+
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView4"-->
+<!--            android:layout_width="@dimen/_100sdp"-->
+<!--            android:layout_height="@dimen/_50sdp"-->
+<!--            android:src="@drawable/facebook"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/signin_button"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/linearLayout"-->
+<!--            android:contentDescription="@string/todo" />-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

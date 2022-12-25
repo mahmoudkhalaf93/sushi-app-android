@@ -2,54 +2,60 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view"
-    
+
     >
-    <group  android:id="@+id/group" >
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_order"
             android:icon="@drawable/ic_twotone_shopping_cart_24"
-            android:title="Order" />
+            android:title="@string/order_menu" />
         <item
             android:id="@+id/nav_menu"
             android:icon="@drawable/ic_sushi_plat"
-            android:title="Menu" />
+            android:title="@string/menu_menu" />
         <item
             android:id="@+id/nav_restaurant"
             android:icon="@drawable/ic_baseline_location_on_24"
-            android:title="Restaurant" />
+            android:title="@string/restaurant_menu" />
         <item
 
             android:id="@+id/nav_favorites"
             android:icon="@drawable/ic_baseline_favorite_border_24"
-            android:title="Favorites" />
+            android:title="@string/favorites_menu" />
         <item
             android:id="@+id/nav_mycart"
             android:icon="@drawable/ic_round_shopping_basket_24"
-            android:title="My Cart" />
+            android:title="@string/my_cart_menu" />
         <item
-            android:checked="true"
             android:id="@+id/nav_myaccount"
+            android:checked="true"
             android:icon="@drawable/ic_user_person"
-            android:title="My Account" />
-</group>
+            android:title="@string/my_account_menu" />
+    </group>
 
-    <group  android:id="@+id/group1" >
+    <group android:checkableBehavior="single"
+        android:id="@+id/group1">
 
         <item
             android:id="@+id/nav_aboutus"
             android:icon="@drawable/ic_baseline_info_24"
-            android:title="About Us" />
+            android:title="@string/about_us_menu" />
         <item
             android:id="@+id/nav_contactus"
             android:icon="@drawable/ic_outline_email_24"
-            android:title="Contact Us" />
+            android:title="@string/contact_us_menu" />
         <item
             android:id="@+id/nav_terms"
             android:icon="@drawable/terms"
-            android:title="Terms and Conditions" />
+            android:title="@string/terms_and_conditions_menu" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_round_logout_24"
+            android:title="@string/logout" />
     </group>
 </menu>

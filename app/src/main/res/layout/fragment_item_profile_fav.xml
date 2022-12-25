@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.itemprofilefav.ItemProfileFavFragment">
+
+
+        <View
+            android:id="@+id/viewfav"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="match_parent"
+            android:background="@color/light_orange"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/item_profile_descripfav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxEms="15"
+            android:maxLines="5"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:text="@string/txt_text"
+            android:textColor="@color/light_orange"
+            app:layout_constraintBottom_toTopOf="@+id/addmore_fav"
+            app:layout_constraintStart_toEndOf="@+id/viewfav"
+            app:layout_constraintTop_toBottomOf="@+id/remove_from_favorites" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addmore_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_35sdp"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:background="@drawable/price_shape"
+            android:text="@string/add_to_cart"
+            android:textColor="@color/light_orange"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/item_profile_namefav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:autoMirrored="true"
+            android:background="@drawable/txt_white_rounded"
+            android:fontFamily="@font/calibrib"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textColor="@color/light_orange"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintEnd_toEndOf="@+id/remove_from_favorites"
+            app:layout_constraintHorizontal_bias="0.33"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="item 1" />
+
+
+        <TextView
+            android:id="@+id/item_profile_pricefav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/txt_oragne_rounded"
+            android:fontFamily="@font/calibri"
+
+            android:gravity="end"
+            android:minEms="5"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintStart_toStartOf="@+id/item_profile_namefav"
+            app:layout_constraintTop_toBottomOf="@+id/item_profile_namefav"
+            tools:text="49.99" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/remove_from_favorites"
+            android:layout_width="@dimen/_210sdp"
+            android:layout_height="@dimen/_260sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:clickable="true"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_profile_pricefav"
+            android:focusable="true">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/item_profile_imagefavprofile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo"
+                fresco:placeholderImage="@drawable/backgroud_logo"
+                fresco:placeholderImageScaleType="centerCrop" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/item_profile_favorite_Signfav"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_minus48sdp"
+                android:layout_marginEnd="@dimen/_minus48sdp"
+                app:cardCornerRadius="@dimen/_180sdp">
+
+                <ImageView
+                    android:id="@+id/item_profile_heart_imagefav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_baseline_favorite_24" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

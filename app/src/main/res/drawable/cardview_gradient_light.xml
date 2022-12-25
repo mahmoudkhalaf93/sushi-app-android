@@ -4,7 +4,7 @@
     >
 
 
-    <gradient android:startColor="@color/light_orange_gradient_light"
+    <gradient android:angle="270" android:startColor="@color/light_orange_gradient_light"
         android:centerColor="@color/light_orange_gradient_light"
         android:endColor="@color/light_orange_gradient_hard"
         />
