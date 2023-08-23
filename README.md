@@ -1,7 +1,7 @@
 # sushi-app-android
 restaurant app using firebase , and room database , app work fine
 [sushi pdf.pdf](https://github.com/mahmoudkhalaf93/sushi-app-android/files/12422957/sushi.pdf.pdf)
-![Screenshot_20211028-130418_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/1c4f7114-53f2-400d-b028-7427dc97ffca)
+![Screenshot_20211028-130418_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/1c4f7114-53f2-400d-b028-7427dc97ffca| height=100)
 ![Screenshot_20211028-130258_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/f2fed74a-728e-442e-950a-aef8406b80d6)
 ![Screenshot_20211028-130243_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/da00af45-a911-46bd-a20b-c15be10237b6)
 ![Screenshot_20211028-130233_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/56a66125-124e-437a-b379-7f4fe422e9bc)
