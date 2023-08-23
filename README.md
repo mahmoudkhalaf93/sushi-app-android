@@ -24,9 +24,9 @@ restaurant app using firebase , and room database you can test the app
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/29431c1f-d89f-4671-917e-de78a66efff5"  height="600">
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/3e25761f-9c6b-4222-bb5e-14c50ac9b5bd"  height="600">
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/37650154-4568-4a0b-9386-cac6694ead96"  height="600">
-![Screenshot_20211028-130218_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/cba9d69c-6408-442a-9598-3f9ca19cca9d)
-![Screenshot_20211028-130226_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/ac180887-d68c-4164-8cc4-35c991ade475)
-![Screenshot_20211028-130233_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/83edc06e-03a7-4e48-a7f3-14c4db846d9a)
-![Screenshot_20211028-130243_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/a6379b83-3825-4659-b417-619d857cea14)
-![Screenshot_20211028-130258_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/4bf9b22d-fe72-4b10-8422-68af31834322)
-![Screenshot_20211028-130418_Sushi](https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/6b838b7f-1b87-4c56-b43a-21771ca2fe4e)
+<img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/cba9d69c-6408-442a-9598-3f9ca19cca9d"  height="600">
+<img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/ac180887-d68c-4164-8cc4-35c991ade475"  height="600">
+<img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/83edc06e-03a7-4e48-a7f3-14c4db846d9a"  height="600">
+<img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/a6379b83-3825-4659-b417-619d857cea14"  height="600">
+<img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/4bf9b22d-fe72-4b10-8422-68af31834322"  height="600">
+<img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/6b838b7f-1b87-4c56-b43a-21771ca2fe4e"  height="600">
