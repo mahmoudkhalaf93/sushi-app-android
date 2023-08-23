@@ -1,17 +1,11 @@
 # sushi-app-android
 restaurant app using firebase , and room database you can test the app
 [sushi pdf.pdf](https://github.com/mahmoudkhalaf93/sushi-app-android/files/12422957/sushi.pdf.pdf)
-dsa
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/78051617-9260-46a5-85b1-4b87226fab8b"  height="600">
-dsa
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/13916434-9d17-4ab0-aac4-76dceef0f75a"  height="600">
-dsad
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/35a050bf-0874-4849-a879-7db4a052f449"  height="600">
-dsa
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/7c11b1a0-8e25-4c1f-a826-b99bfa487e93"  height="600">
-dsa
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/937086c7-622a-4f08-9336-e3b5b0d278d9"  height="600">
-sad
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/7c5e7206-4e40-4e67-b41b-2c7d6cad6913"  height="600">
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/3cbd6446-8f31-41a7-919e-34c96cbacbfd"  height="600">
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/7d9dcbeb-e799-4574-ae4b-198017d11ea6"  height="600">
