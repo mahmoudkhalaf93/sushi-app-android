@@ -1,14 +1,6 @@
 # sushi-app-android
 restaurant app using firebase , and room database you can test the app
 [sushi pdf.pdf](https://github.com/mahmoudkhalaf93/sushi-app-android/files/12422957/sushi.pdf.pdf)
-<div class="container">
-  <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/78051617-9260-46a5-85b1-4b87226fab8b" alt="Snow" style="width:100%;">
-  <div class="bottom-left">Bottom Left</div>
-  <div class="top-left">Top Left</div>
-  <div class="top-right">Top Right</div>
-  <div class="bottom-right">Bottom Right</div>
-  <div class="centered">Centered</div>
-</div>
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/78051617-9260-46a5-85b1-4b87226fab8b"  height="600">
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/13916434-9d17-4ab0-aac4-76dceef0f75a"  height="600">
 <img src="https://github.com/mahmoudkhalaf93/sushi-app-android/assets/35484452/35a050bf-0874-4849-a879-7db4a052f449"  height="600">
